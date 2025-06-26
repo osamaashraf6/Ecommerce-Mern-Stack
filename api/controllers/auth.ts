@@ -31,8 +31,11 @@ export const login = asyncHandler(
     next: express.NextFunction
   ): Promise<void> => {
     const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+      return next(new ApiError(401, "Invalid Email Or Password !"));
+    }
     const password = await bcrypt.compare(req.body.password, user!.password);
-    if (!user || !password) {
+    if (!password) {
       return next(new ApiError(401, "Invalid Email Or Password !"));
     }
     const token = CreateSignToken(user._id, user.role);
@@ -135,7 +138,6 @@ export const verifyResetCode = asyncHandler(
   }
 );
 //  verifyPersonalIdentity
-
 
 //  resetPassword
 export const resetPassword = asyncHandler(

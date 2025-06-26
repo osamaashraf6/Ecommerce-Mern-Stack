@@ -1,6 +1,6 @@
 const globalService = {
   // baseUrl
-  baseUrl: "https://ecommerce-react-nti-production.up.railway.app",
+  baseUrl: process.env.REACT_APP_BASE_URL,
   //   Routes
   routes: {
     addresses: "/api/v1/addresses",
@@ -15,10 +15,10 @@ const globalService = {
     wishlists: "/api/v1/favourites",
   },
   //   domainImgs
-  userImg: "https://ecommerce-react-nti-production.up.railway.app/users/",
-  productImg: "https://ecommerce-react-nti-production.up.railway.app/products/",
-  categoryImg: "https://ecommerce-react-nti-production.up.railway.app/categories/",
-  subcategoryImg: "https://ecommerce-react-nti-production.up.railway.app/subcategories/",
+  userImg: `${process.env.REACT_APP_BASE_URL}/users/`,
+  productImg: `${process.env.REACT_APP_BASE_URL}/products/`,
+  categoryImg: `${process.env.REACT_APP_BASE_URL}/categories/`,
+  subcategoryImg: `${process.env.REACT_APP_BASE_URL}/subcategories/`,
   //   ApiKey
   APiKey: "secret123",
 };
