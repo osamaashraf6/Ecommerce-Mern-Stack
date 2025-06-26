@@ -53,6 +53,7 @@ app.use(
       "http://localhost:4200",
       "http://localhost:3000",
       "https://ecommerce-mern-lac.vercel.app",
+      "https://ecommerce-mern-stack-navy.vercel.app/",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: [
