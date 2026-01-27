@@ -28,14 +28,13 @@
     "react-toastify": "^11.0.3",
     "redux-persist": "^6.0.0",
     "swiper": "^11.2.4",
+    "tailwindcss": "^3.4.17",
     "timeago.js": "^4.0.2",
-    "web-vitals": "^2.1.4",
-        "tailwindcss": "^3.4.17"
-
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env GENERATE_SOURCEMAP=false CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -58,5 +57,6 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^10.1.0"
   }
 }
